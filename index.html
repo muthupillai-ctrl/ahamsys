@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahamsys Consultancy — Enterprise Software & AI, Bengaluru</title>
+<meta name="description" content="Ahamsys builds enterprise software, AI systems, and managed platforms for fintech, retail, and government clients across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #181818;
+  --paper:     #F9F9F8;
+  --stone:     #EDEAE5;
+  --rule:      #D4D0CA;
+  --muted:     #6B6B6B;
+  --faint:     #A8A49E;
+  --accent:    #3D5A80;
+  --accent-lt: #EDF1F5;
+  --serif:     'Playfair Display', Georgia, serif;
+  --sans:      'DM Sans', -apple-system, sans-serif;
+  --max:       1160px;
+  --gap:       5rem;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── UTILITY ── */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 2.5rem; }
+.serif { font-family: var(--serif); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  border-bottom: 1px solid var(--rule);
+  background: rgba(249,249,248,0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  display: flex; align-items: center; gap: 0.55rem;
+  text-decoration: none; color: var(--ink);
+  font-family: var(--serif); font-size: 1.35rem; font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.logo img { height: 30px; width: auto; display: block; }
+.logo-dot { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem; font-weight: 400; color: var(--muted);
+  text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--paper) !important;
+  background: var(--ink);
+  padding: 0.48rem 1.2rem; border-radius: 3px;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--accent) !important; }
+.nav-mobile-btn {
+  display: none; background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; padding: 4px;
+}
+.nav-mobile-btn span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--ink); border-radius: 1px; transition: all 0.25s;
+}
+
+/* ── HERO ── */
+.hero {
+  padding-top: 120px; padding-bottom: 7rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 2.5rem;
+  display: grid; grid-template-columns: 1fr 380px; gap: 6rem; align-items: start;
+}
+.hero-eyebrow {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--faint);
+  margin-bottom: 1.6rem; display: block;
+}
+.hero h1 {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+  line-height: 1.08; letter-spacing: -0.02em; color: var(--ink);
+  max-width: 560px;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero-body {
+  margin-top: 1.8rem; font-size: 1rem; line-height: 1.8;
+  color: var(--muted); max-width: 480px; font-weight: 300;
+}
+.hero-actions { margin-top: 2.4rem; display: flex; gap: 1rem; align-items: center; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--ink); color: var(--paper);
+  padding: 0.78rem 1.8rem; border-radius: 3px;
+  font-size: 0.875rem; font-weight: 500; text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--accent); }
+.btn-link {
+  font-size: 0.875rem; color: var(--muted); text-decoration: none;
+  font-weight: 400; border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px; transition: color 0.2s, border-color 0.2s;
+}
+.btn-link:hover { color: var(--ink); border-color: var(--ink); }
+
+/* hero right: stat column */
+.hero-stats { padding-top: 0.5rem; }
+
+
+
+  .hero-tagline-text {
+    font-size: 1.05rem; line-height: 1.82; color: var(--muted);
+    font-weight: 300; max-width: 420px;
+  }
+  .hero-verticals {
+    margin-top: 2rem; display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.78rem; font-weight: 500; color: var(--faint);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── RULED SECTION LAYOUT ── */
+/* Every section uses this two-col structure:
+   [narrow left: rotated label + rule] [wide right: content] */
+.ruled-section {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ruled-section.stone { background: var(--stone); }
+.ruled-section.dark  { background: var(--ink); }
+.ruled-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 2.5rem;
+  display: grid; grid-template-columns: 120px 1fr; gap: 4rem; align-items: start;
+}
+.ruled-left {
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 0.25rem;
+}
+.ruled-rule {
+  width: 1px; flex: 1; min-height: 60px;
+  background: var(--rule); margin-top: 0.6rem;
+}
+.ruled-section.dark .ruled-rule { background: rgba(255,255,255,0.12); }
+.ruled-label {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--faint);
+  writing-mode: vertical-lr; text-orientation: mixed;
+  transform: rotate(180deg); white-space: nowrap;
+}
+.ruled-section.dark .ruled-label { color: rgba(255,255,255,0.3); }
+
+/* ── SECTION HEADS ── */
+.sh {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  line-height: 1.14; letter-spacing: -0.015em; color: var(--ink);
+  max-width: 560px;
+}
+.ruled-section.dark .sh { color: var(--paper); }
+.sh-sub {
+  font-size: 0.95rem; line-height: 1.78; color: var(--muted);
+  max-width: 560px; margin-top: 0.9rem; font-weight: 300;
+}
+.ruled-section.dark .sh-sub { color: rgba(249,249,248,0.5); }
+
+/* ── SERVICES ── */
+.svc-head { margin-bottom: 3.5rem; }
+.svc-list { display: flex; flex-direction: column; }
+.svc-row {
+  display: grid; grid-template-columns: 2.5rem 1fr 1fr;
+  gap: 1.5rem; align-items: start;
+  padding: 1.6rem 0; border-bottom: 1px solid var(--rule);
+}
+.svc-row:first-child { border-top: 1px solid var(--rule); }
+.svc-idx {
+  font-size: 0.7rem; font-weight: 500; color: var(--faint);
+  padding-top: 0.3rem; letter-spacing: 0.06em;
+}
+.svc-name {
+  font-weight: 500; font-size: 1rem; color: var(--ink); line-height: 1.3;
+}
+.svc-desc {
+  font-size: 0.875rem; line-height: 1.72;
+  color: var(--muted); font-weight: 300;
+}
+
+/* ── AI SECTION ── */
+.ai-two { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.ai-caps { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.ai-cap {
+  padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: grid; grid-template-columns: 1.5rem 1fr; gap: 1rem; align-items: start;
+}
+.ai-cap:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+.ai-cap-bullet {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); margin-top: 0.55rem; flex-shrink: 0;
+}
+.ai-cap-name { font-weight: 500; font-size: 0.95rem; color: var(--paper); margin-bottom: 0.3rem; }
+.ai-cap-desc { font-size: 0.845rem; color: rgba(249,249,248,0.45); line-height: 1.68; font-weight: 300; }
+.ai-right { padding-top: 2rem; }
+.ai-right-head {
+  font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(249,249,248,0.3); margin-bottom: 1.5rem;
+}
+.hw-list { display: flex; flex-direction: column; gap: 0; }
+.hw-row {
+  display: grid; grid-template-columns: 90px 1fr 1fr;
+  gap: 1.5rem; align-items: center;
+  padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.85rem;
+}
+.hw-row:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+.hw-vendor { font-size: 0.7rem; color: rgba(249,249,248,0.3); text-transform: uppercase; letter-spacing: 0.08em; }
+.hw-name { color: var(--paper); font-weight: 500; }
+.hw-spec { color: rgba(249,249,248,0.35); font-size: 0.8rem; font-weight: 300; }
+.ai-stack { margin-top: 2.5rem; }
+.ai-stack-head { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(249,249,248,0.3); margin-bottom: 0.9rem; }
+.ai-stack-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pill {
+  font-size: 0.72rem; font-weight: 400;
+  padding: 0.25rem 0.75rem; border-radius: 2px;
+  border: 1px solid rgba(249,249,248,0.12);
+  color: rgba(249,249,248,0.45); letter-spacing: 0.02em;
+}
+
+/* ── INDUSTRIES ── */
+.ind-grid {
+  margin-top: 3rem;
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 0; border: 1px solid var(--rule);
+}
+.ind-card {
+  padding: 2rem 1.8rem; border-right: 1px solid var(--rule);
+  transition: background 0.2s;
+}
+.ind-card:last-child { border-right: none; }
+.ind-card:hover { background: white; }
+.ind-icon { font-size: 1.4rem; margin-bottom: 1rem; }
+.ind-name { font-weight: 500; font-size: 1rem; margin-bottom: 0.5rem; }
+.ind-desc { font-size: 0.845rem; line-height: 1.72; color: var(--muted); font-weight: 300; }
+.ind-tags { margin-top: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.ind-tag { font-size: 0.72rem; color: var(--faint); font-weight: 300; }
+.ind-tag::before { content: '— '; }
+
+/* ── WHY US ── */
+.why-two { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.why-items { display: flex; flex-direction: column; gap: 0; }
+.why-item {
+  padding: 1.5rem 0; border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: 1.8rem 1fr; gap: 1.2rem; align-items: start;
+}
+.why-item:first-child { border-top: 1px solid var(--rule); }
+.why-bullet {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); margin-top: 0.55rem; flex-shrink: 0;
+}
+.why-name { font-weight: 500; font-size: 0.975rem; margin-bottom: 0.35rem; }
+.why-text { font-size: 0.855rem; line-height: 1.75; color: var(--muted); font-weight: 300; }
+.why-aside { display: flex; flex-direction: column; gap: 0; padding-top: 0.25rem; }
+
+.tech-section { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+.tech-head { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.8rem; }
+.tech-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.tech-pill {
+  font-size: 0.72rem; font-weight: 300;
+  padding: 0.22rem 0.7rem; border-radius: 2px;
+  border: 1px solid var(--rule); color: var(--muted);
+}
+
+/* ── ABOUT ── */
+.about-two { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.about-highlights { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
+.abt-line {
+  padding: 1rem 0; border-bottom: 1px solid var(--rule);
+  font-size: 0.9rem; line-height: 1.65; color: var(--muted); font-weight: 300;
+  display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.8rem; align-items: start;
+}
+.abt-line:first-child { border-top: 1px solid var(--rule); }
+.abt-dash { color: var(--faint); font-size: 0.8rem; padding-top: 0.2rem; }
+
+
+/* ── CONTACT ── */
+.contact-two { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-details { display: flex; flex-direction: column; gap: 0; }
+.cd-row {
+  display: grid; grid-template-columns: 110px 1fr;
+  gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rule);
+  font-size: 0.875rem; align-items: start;
+}
+.cd-row:first-child { border-top: 1px solid var(--rule); }
+.cd-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); padding-top: 0.15rem; }
+.cd-val { color: var(--ink); font-weight: 400; }
+.cd-val a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; transition: border-color 0.2s; }
+.cd-val a:hover { border-color: var(--ink); }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.cf-field {
+  display: flex; flex-direction: column; gap: 0.4rem;
+}
+.cf-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
+.cf-input, .cf-textarea {
+  border: none; border-bottom: 1px solid var(--rule);
+  background: transparent; padding: 0.6rem 0;
+  font-family: var(--sans); font-size: 0.9rem; color: var(--ink);
+  outline: none; width: 100%; transition: border-color 0.2s;
+  border-radius: 0;
+}
+.cf-input:focus, .cf-textarea:focus { border-color: var(--accent); }
+.cf-textarea { resize: none; min-height: 90px; }
+.cf-submit {
+  margin-top: 0.5rem; padding: 0.78rem 2rem;
+  background: var(--ink); color: var(--paper);
+  border: none; font-family: var(--sans); font-size: 0.875rem; font-weight: 500;
+  cursor: pointer; border-radius: 3px; transition: background 0.2s;
+  align-self: flex-start;
+}
+.cf-submit:hover { background: var(--accent); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); padding: 2rem 2.5rem;
+}
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+  color: rgba(249,249,248,0.35); text-decoration: none; letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 0.45rem;
+}
+.footer-logo img { height: 22px; opacity: 0.35; }
+.footer-logo-dot { color: var(--accent); opacity: 1; }
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a {
+  font-size: 0.78rem; color: rgba(249,249,248,0.25);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: rgba(249,249,248,0.6); }
+.footer-copy { font-size: 0.75rem; color: rgba(249,249,248,0.2); }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  :root { --gap: 4rem; }
+  .nav-links { display: none; }
+  .nav-mobile-btn { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; gap: 3.5rem; }
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .hero-stat { padding: 1.1rem 0; }
+  .ruled-inner { grid-template-columns: 80px 1fr; gap: 2rem; }
+  .svc-row { grid-template-columns: 2rem 1fr; }
+  .svc-desc { display: none; }
+  .ai-two,.why-two,.about-two,.contact-two { grid-template-columns: 1fr; gap: 3rem; }
+  .ind-grid { grid-template-columns: 1fr; }
+  .ind-card { border-right: none; border-bottom: 1px solid var(--rule); }
+  .ind-card:last-child { border-bottom: none; }
+}
+@media (max-width: 600px) {
+  :root { --max: 100%; }
+  .wrap, .nav-inner, .hero-inner, .ruled-inner, .footer-inner { padding: 0 1.25rem; }
+  .hero { padding-top: 96px; padding-bottom: 4.5rem; }
+  .ruled-section { padding: 4.5rem 0; }
+  .ruled-inner { grid-template-columns: 56px 1fr; gap: 1.2rem; }
+  .ruled-label { font-size: 0.58rem; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .svc-row { grid-template-columns: 1.8rem 1fr; }
+  .hero h1 { font-size: 2.4rem; }
+  footer { padding: 1.5rem 1.25rem; }
+  .footer-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAeAB4AAD/4RDyRXhpZgAATU0AKgAAAAgABAE7AAIAAAANAAAISodpAAQAAAABAAAIWJydAAEAAAAaAAAQ0OocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE11dGh1IFBpbGxhaQAAAAWQAwACAAAAFAAAEKaQBAACAAAAFAAAELqSkQACAAAAAzQ3AACSkgACAAAAAzQ3AADqHAAHAAAIDAAACJoAAAAAHOoAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyMDIyOjA5OjIxIDE1OjQ1OjQxADIwMjI6MDk6MjEgMTU6NDU6NDEAAABNAHUAdABoAHUAIABQAGkAbABsAGEAaQAAAP/hCx9odHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0n77u/JyBpZD0nVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkJz8+DQo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIj48cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSJ1dWlkOmZhZjViZGQ1LWJhM2QtMTFkYS1hZDMxLWQzM2Q3NTE4MmYxYiIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIi8+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iPjx4bXA6Q3JlYXRlRGF0ZT4yMDIyLTA5LTIxVDE1OjQ1OjQxLjQ3MjwveG1wOkNyZWF0ZURhdGU+PC9yZGY6RGVzY3JpcHRpb24+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPjxkYzpjcmVhdG9yPjxyZGY6U2VxIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpsaT5NdXRodSBQaWxsYWk8L3JkZjpsaT48L3JkZjpTZXE+DQoJCQk8L2RjOmNyZWF0b3I+PC9yZGY6RGVzY3JpcHRpb24+PC9yZGY6UkRGPjwveDp4bXBtZXRhPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8P3hwYWNrZXQg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" alt="Ahamsys">
+      Ahamsys<span class="logo-dot">.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#ai">AI Practice</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+    </ul>
+    <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <span class="hero-eyebrow">Ahamsys Consultancy · Bengaluru · Est. 2016</span>
+      <h1>Software that <em>lasts.</em></h1>
+      <p class="hero-body">We design, build, and operate enterprise-grade software for financial institutions, retail businesses, and government — from custom applications to AI systems and managed cloud infrastructure.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start a project</a>
+        <a href="#services" class="btn-link">See what we do</a>
+      </div>
+    </div>
+    <div class="hero-tagline reveal" style="transition-delay:0.15s">
+      <p class="hero-tagline-text">A team of experienced engineers who have spent careers inside banking platforms, payment networks, and enterprise systems — now building the same quality for clients who deserve it.</p>
+      <div class="hero-verticals">
+        <span>Fintech &amp; Banking</span>
+        <span>·</span>
+        <span>Retail &amp; Commerce</span>
+        <span>·</span>
+        <span>Government</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="ruled-section" id="services">
+  <div class="ruled-inner">
+    <div class="ruled-left">
+      <span class="ruled-label">Services</span>
+      <div class="ruled-rule"></div>
+    </div>
+    <div>
+      <div class="svc-head reveal">
+        <h2 class="sh">Eight disciplines.<br>One partner.</h2>
+        <p class="sh-sub">We cover the full software lifecycle — from first sketch to long-term managed operations.</p>
+      </div>
+      <div class="svc-list">
+        <div class="svc-row reveal">
+          <span class="svc-idx">01</span>
+          <span class="svc-name">Custom Software Development</span>
+          <span class="svc-desc">Bespoke web and mobile applications built precisely to your business logic, designed to scale from day one.</span>
+        </div>
+        <div class="svc-row reveal" style="transition-delay:.05s">
+          <span class="svc-idx">02</span>
+          <span class="svc-name">AI Agents & Automation</span>
+          <span class="svc-desc">LLM-powered workflows, intelligent agents, and edge AI deployments that replace manual overhead with real-time decisions.</span>
+        </div>
+        <div class="svc-row reveal" style="transition-delay:.1s">
+          <span class="svc-idx">03</span>
+          <span class="svc-name">Cloud Hosting & Infrastructure</span>
+          <span class="svc-desc">Resilient, cost-optimised environments on AWS, GCP, or Azure — designed, provisioned, and managed end-to-end.</span>
+        </div>
+        <div class="svc-row reveal" style="transition-delay:.15s">
+          <span class="svc-idx">04</span>
+          <span class="svc-name">Managed Support Services</span>
+          <span class="svc-desc">24/7 monitoring, incident response, and SLA-backed maintenance so your critical systems never stand still.</span>
+        </div>
+        <div class="svc-row reveal" style="transition-delay:.2s">
+          <span class="svc-idx">05</span>
+          <span class="svc-name">Government Digital Services</span>
+          <span class="svc-desc">Citizen portals, e-governance platforms, and inter-agency integrations built to national data security standards.</span>
+        </div>
+        <div class="svc-row reveal" style="transition-delay:.25s">
+          <span class="svc-idx">06</span>
+          <span class="svc-name">Salesforce Services</span>
+          <span class="svc-desc">CRM configuration, custom Apex development, Lightning components, and ongoing Salesforce administration.</span>
+        </div>
+        <div class="svc-row reveal" style="transition-delay:.3s">
+          <span class="svc-idx">07</span>
+          <span class="svc-name">Fintech Platform Engineering</span>
+          <span class="svc-desc">Payment gateways, HSM integrations, ISO 8583 protocol handling, and PCI-compliant banking architectures.</span>
+        </div>
+        <div class="svc-row reveal" style="transition-delay:.35s">
+          <span class="svc-idx">08</span>
+          <span class="svc-name">Retail & Commerce Platforms</span>
+          <span class="svc-desc">POS systems, inventory management, loyalty programmes, and omnichannel e-commerce solutions.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI PRACTICE -->
+<section class="ruled-section dark" id="ai">
+  <div class="ruled-inner">
+    <div class="ruled-left">
+      <span class="ruled-label" style="color:rgba(249,249,248,0.25)">AI Practice</span>
+      <div class="ruled-rule" style="background:rgba(255,255,255,0.1)"></div>
+    </div>
+    <div class="ai-two">
+      <div class="reveal">
+        <p style="font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(249,249,248,0.3);margin-bottom:1.2rem">New practice · 2025</p>
+        <h2 class="sh" style="color:var(--paper)">AI Accelerator — from prototype to production edge.</h2>
+        <p class="sh-sub">We pair LLM engineering with purpose-built edge hardware to deliver inference at the point of need — in cameras, factories, and retail floors — not just the cloud.</p>
+        <div class="ai-caps">
+          <div class="ai-cap">
+            <div class="ai-cap-bullet"></div>
+            <div>
+              <div class="ai-cap-name">LLM Agents & Document Intelligence</div>
+              <div class="ai-cap-desc">Conversational AI, autonomous workflow agents, and document processing built on GPT-4, Claude, and open-source models deployed on your infrastructure or ours.</div>
+            </div>
+          </div>
+          <div class="ai-cap">
+            <div class="ai-cap-bullet"></div>
+            <div>
+              <div class="ai-cap-name">Vision AI & Video Analytics</div>
+              <div class="ai-cap-desc">Real-time object detection, anomaly recognition, and footfall counting for retail, logistics, and security — running on edge devices at sub-10ms latency.</div>
+            </div>
+          </div>
+          <div class="ai-cap">
+            <div class="ai-cap-bullet"></div>
+            <div>
+              <div class="ai-cap-name">Industrial Edge Inference</div>
+              <div class="ai-cap-desc">On-premise AI for environments where cloud round-trips are not an option: factory QA, fraud detection, and ruggedised field deployments.</div>
+            </div>
+          </div>
+          <div class="ai-cap">
+            <div class="ai-cap-bullet"></div>
+            <div>
+              <div class="ai-cap-name">Process Automation & RPA</div>
+              <div class="ai-cap-desc">Intelligent document processing, reconciliation bots, and multi-system orchestration that eliminate repetitive back-office work.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ai-right reveal" style="transition-delay:.15s">
+        <div class="ai-right-head">Edge AI hardware portfolio</div>
+        <div class="hw-list">
+          <div class="hw-row">
+            <span class="hw-vendor">Axelera</span>
+            <span class="hw-name">Metis</span>
+            <span class="hw-spec">214 TOPS · PCIe M.2</span>
+          </div>
+          <div class="hw-row">
+            <span class="hw-vendor">Hailo</span>
+            <span class="hw-name">Hailo-8</span>
+            <span class="hw-spec">26 TOPS · 2.5W TDP</span>
+          </div>
+          <div class="hw-row">
+            <span class="hw-vendor">NVIDIA</span>
+            <span class="hw-name">Jetson Orin NX</span>
+            <span class="hw-spec">275 TOPS · module form</span>
+          </div>
+          <div class="hw-row">
+            <span class="hw-vendor">Runtime</span>
+            <span class="hw-name">ONNX · TensorRT</span>
+            <span class="hw-spec">Vendor-agnostic models</span>
+          </div>
+        </div>
+        <div class="ai-stack">
+          <div class="ai-stack-head">Software stack</div>
+          <div class="ai-stack-pills">
+            <span class="pill">Python</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">LangChain</span>
+            <span class="pill">OpenCV</span>
+            <span class="pill">ONNX</span>
+            <span class="pill">TensorRT</span>
+            <span class="pill">Kafka</span>
+            <span class="pill">Docker</span>
+            <span class="pill">Kubernetes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ruled-section stone" id="industries">
+  <div class="ruled-inner">
+    <div class="ruled-left">
+      <span class="ruled-label">Industries</span>
+      <div class="ruled-rule"></div>
+    </div>
+    <div>
+      <div class="reveal">
+        <h2 class="sh">Domain expertise,<br>not just code.</h2>
+        <p class="sh-sub">We understand the regulations, risk models, and operational constraints of each sector we work in.</p>
+      </div>
+      <div class="ind-grid reveal" style="transition-delay:.1s">
+        <div class="ind-card">
+          <div class="ind-icon">⬡</div>
+          <div class="ind-name">Fintech & Banking</div>
+          <div class="ind-desc">Payment gateways, HSM integrations, ISO 8583 protocol handling, DUKPT key management, card lifecycle systems, and PCI-compliant architectures. Over two decades of real production experience at the protocol level.</div>
+          <div class="ind-tags">
+            <span class="ind-tag">ISO 8583</span>
+            <span class="ind-tag">Thales HSM</span>
+            <span class="ind-tag">DUKPT</span>
+            <span class="ind-tag">PCI DSS</span>
+          </div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">⬡</div>
+          <div class="ind-name">Retail & Commerce</div>
+          <div class="ind-desc">Omnichannel storefronts, warehouse management, real-time inventory sync, loyalty platforms, and POS systems. From single-store rollouts to enterprise chains across hundreds of locations.</div>
+          <div class="ind-tags">
+            <span class="ind-tag">Omnichannel POS</span>
+            <span class="ind-tag">Inventory sync</span>
+            <span class="ind-tag">Loyalty</span>
+          </div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">⬡</div>
+          <div class="ind-name">Government & Public Sector</div>
+          <div class="ind-desc">Citizen-facing portals, document management, inter-agency integrations, and e-governance platforms. Built to national data security standards with full auditability and compliance trails.</div>
+          <div class="ind-tags">
+            <span class="ind-tag">E-Governance</span>
+            <span class="ind-tag">Citizen portals</span>
+            <span class="ind-tag">Compliance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="ruled-section" id="why">
+  <div class="ruled-inner">
+    <div class="ruled-left">
+      <span class="ruled-label">Why Ahamsys</span>
+      <div class="ruled-rule"></div>
+    </div>
+    <div class="why-two">
+      <div class="why-items">
+        <div class="why-item reveal">
+          <div class="why-bullet"></div>
+          <div>
+            <div class="why-name">Domain-deep, not generic</div>
+            <div class="why-text">Our engineers carry hands-on expertise in payment cryptography, cloud-native architecture, and enterprise CRM — built over 25 years of production deployments, not tutorials.</div>
+          </div>
+        </div>
+        <div class="why-item reveal" style="transition-delay:.07s">
+          <div class="why-bullet"></div>
+          <div>
+            <div class="why-name">Transparent, agile delivery</div>
+            <div class="why-text">Two-week sprints, clear milestones, and shared dashboards. You always know where your project stands — no surprises at go-live.</div>
+          </div>
+        </div>
+        <div class="why-item reveal" style="transition-delay:.14s">
+          <div class="why-bullet"></div>
+          <div>
+            <div class="why-name">Long-term partnership model</div>
+            <div class="why-text">We architect for longevity — clean codebases, thorough documentation, and SLA-backed managed support so your investment compounds over time.</div>
+          </div>
+        </div>
+        <div class="why-item reveal" style="transition-delay:.21s">
+          <div class="why-bullet"></div>
+          <div>
+            <div class="why-name">Security designed in from day one</div>
+            <div class="why-text">From HSM integrations and DUKPT key management to VAPT-ready deployments, security is never bolted on. Our fintech heritage demands it.</div>
+          </div>
+        </div>
+        <div class="why-item reveal" style="transition-delay:.28s">
+          <div class="why-bullet"></div>
+          <div>
+            <div class="why-name">Senior team, direct access</div>
+            <div class="why-text">With 12 engineers, every engagement gets senior attention. You work directly with the people building your product — no coordinators, no junior proxies.</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-aside reveal" style="transition-delay:.1s">
+        <div class="tech-section" style="border-top:none;padding-top:0;margin-top:0">
+          <div class="tech-head">Technology stack</div>
+          <div class="tech-pills">
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Java</span>
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Angular</span>
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">Redis</span>
+            <span class="tech-pill">Kafka</span>
+            <span class="tech-pill">AWS</span>
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">Kubernetes</span>
+            <span class="tech-pill">Salesforce</span>
+            <span class="tech-pill">ISO 8583</span>
+            <span class="tech-pill">Thales HSM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="ruled-section stone" id="about">
+  <div class="ruled-inner">
+    <div class="ruled-left">
+      <span class="ruled-label">About</span>
+      <div class="ruled-rule"></div>
+    </div>
+    <div class="about-two" style="grid-template-columns:1fr;max-width:660px">
+      <div class="reveal">
+        <h2 class="sh">Built from the inside of the industry.</h2>
+        <p class="sh-sub" style="max-width:100%">Founded in 2016, Ahamsys Consultancy has grown from a fintech engineering boutique into a multi-discipline technology partner serving banking, retail, and government clients across India and the Middle East — with a focused team that brings senior expertise to every engagement.</p>
+        <div class="about-highlights">
+          <div class="abt-line"><span class="abt-dash">—</span><span>Headquartered in Bengaluru with delivery capabilities across India and the Middle East.</span></div>
+          <div class="abt-line"><span class="abt-dash">—</span><span>Deep specialisation in payment systems — HSM cryptography, ISO 8583 protocol, card management, and secure key management built over 25+ years of real production work.</span></div>
+          <div class="abt-line"><span class="abt-dash">—</span><span>Expanding AI Accelerator practice bringing edge AI inference to cameras, ATMs, and industrial systems.</span></div>
+          <div class="abt-line"><span class="abt-dash">—</span><span>Team of 12 seasoned engineers led directly by the founding team — senior attention on every engagement.</span></div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.12s">
+        </div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section class="ruled-section" id="contact">
+  <div class="ruled-inner">
+    <div class="ruled-left">
+      <span class="ruled-label">Contact</span>
+      <div class="ruled-rule"></div>
+    </div>
+    <div class="contact-two">
+      <div class="reveal">
+        <h2 class="sh">Let's build<br>something that lasts.</h2>
+        <p class="sh-sub">Tell us about your project. We'll respond within one business day with a clear plan.</p>
+        <div class="contact-details" style="margin-top:2.5rem">
+          <div class="cd-row">
+            <span class="cd-label">Email</span>
+            <span class="cd-val"><a href="mailto:hello@ahamsys.com">hello@ahamsys.com</a></span>
+          </div>
+          <div class="cd-row">
+            <span class="cd-label">Phone</span>
+            <span class="cd-val"><a href="tel:+917090040515">+91 70900 40515</a></span>
+          </div>
+          <div class="cd-row">
+            <span class="cd-label">Location</span>
+            <span class="cd-val">Bengaluru, Karnataka, India</span>
+          </div>
+          <div class="cd-row">
+            <span class="cd-label">Hours</span>
+            <span class="cd-val">Mon – Fri, 9 AM – 6 PM IST</span>
+          </div>
+          <div class="cd-row">
+            <span class="cd-label">Response</span>
+            <span class="cd-val">Within one business day</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.12s">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="cf-field">
+            <label class="cf-label" for="cf-name">Your name</label>
+            <input class="cf-input" id="cf-name" type="text" required placeholder="Priya Sharma">
+          </div>
+          <div class="cf-field">
+            <label class="cf-label" for="cf-email">Email address</label>
+            <input class="cf-input" id="cf-email" type="email" required placeholder="priya@company.com">
+          </div>
+          <div class="cf-field">
+            <label class="cf-label" for="cf-org">Organisation</label>
+            <input class="cf-input" id="cf-org" type="text" placeholder="Your company">
+          </div>
+          <div class="cf-field">
+            <label class="cf-label" for="cf-msg">What are you building?</label>
+            <textarea class="cf-textarea" id="cf-msg" required placeholder="Brief description of your project or challenge…"></textarea>
+          </div>
+          <button class="cf-submit" type="submit">Send message</button>
+        </form>
+        <div id="cf-thanks" style="display:none;padding:1.5rem 0;font-size:0.9rem;color:var(--accent)">
+          Thank you. We'll be in touch within one business day.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="#">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAeAB4AAD/4RDyRXhpZgAATU0AKgAAAAgABAE7AAIAAAANAAAISodpAAQAAAABAAAIWJydAAEAAAAaAAAQ0OocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE11dGh1IFBpbGxhaQAAAAWQAwACAAAAFAAAEKaQBAACAAAAFAAAELqSkQACAAAAAzQ3AACSkgACAAAAAzQ3AADqHAAHAAAIDAAACJoAAAAAHOoAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyMDIyOjA5OjIxIDE1OjQ1OjQxADIwMjI6MDk6MjEgMTU6NDU6NDEAAABNAHUAdABoAHUAIABQAGkAbABsAGEAaQAAAP/hCx9odHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0n77u/JyBpZD0nVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkJz8+DQo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIj48cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSJ1dWlkOmZhZjViZGQ1LWJhM2QtMTFkYS1hZDMxLWQzM2Q3NTE4MmYxYiIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIi8+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iPjx4bXA6Q3JlYXRlRGF0ZT4yMDIyLTA5LTIxVDE1OjQ1OjQxLjQ3MjwveG1wOkNyZWF0ZURhdGU+PC9yZGY6RGVzY3JpcHRpb24+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPjxkYzpjcmVhdG9yPjxyZGY6U2VxIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpsaT5NdXRodSBQaWxsYWk8L3JkZjpsaT48L3JkZjpTZXE+DQoJCQk8L2RjOmNyZWF0b3I+PC9yZGY6RGVzY3JpcHRpb24+PC9yZGY6UkRGPjwveDp4bXBtZXRhPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8P3hwYWNrZXQg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" alt="Ahamsys">
+      Ahamsys<span class="footer-logo-dot">.</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#ai">AI Practice</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Ahamsys Consultancy Pvt. Ltd.</span>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Mobile nav
+document.getElementById('mobileBtn').addEventListener('click', function() {
+  const links = document.querySelector('.nav-links');
+  const isOpen = links.style.display === 'flex';
+  links.style.cssText = isOpen ? '' :
+    'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(249,249,248,0.98);backdrop-filter:blur(12px);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid var(--rule);z-index:99';
+});
+document.querySelectorAll('.nav-links a').forEach(a =>
+  a.addEventListener('click', () => { document.querySelector('.nav-links').style.cssText = ''; })
+);
+
+// Contact form (no server — opens mailto as fallback)
+function handleSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('cf-name').value;
+  const email = document.getElementById('cf-email').value;
+  const org = document.getElementById('cf-org').value;
+  const msg = document.getElementById('cf-msg').value;
+  const mailto = `mailto:hello@ahamsys.com?subject=Project enquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nOrganisation: ${org}\n\n${msg}`)}`;
+  window.location.href = mailto;
+  document.querySelector('.contact-form').style.display = 'none';
+  document.getElementById('cf-thanks').style.display = 'block';
+}
+</script>
+</body>
+</html>
