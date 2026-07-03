@@ -359,6 +359,59 @@ footer {
 .footer-links a:hover { color: rgba(249,249,248,0.6); }
 .footer-copy { font-size: 0.75rem; color: rgba(249,249,248,0.2); }
 
+/* ── PRODUCTS ── */
+.prod-badge {
+  display: inline-block;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper); background: var(--accent);
+  padding: 0.22rem 0.65rem; border-radius: 2px;
+}
+.prod-intro {
+  display: flex; flex-wrap: wrap; gap: 2.5rem;
+  align-items: flex-start; margin-bottom: 3rem;
+}
+.prod-left { flex: 1; min-width: 280px; }
+.prod-right {
+  display: flex; flex-direction: column; gap: 0.8rem;
+  min-width: 200px; padding-top: 0.25rem;
+}
+.prod-note { font-size: 0.78rem; color: var(--faint); font-weight: 300; }
+.prod-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; border: 1px solid var(--rule);
+}
+.prod-feat {
+  padding: 1.8rem 1.6rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  transition: background 0.2s;
+}
+.prod-feat:hover { background: white; }
+.prod-feat:nth-child(3n) { border-right: none; }
+.prod-feat:nth-child(4),
+.prod-feat:nth-child(5),
+.prod-feat:nth-child(6) { border-bottom: none; }
+.prod-feat-name { font-weight: 500; font-size: 0.975rem; color: var(--ink); margin-bottom: 0.5rem; }
+.prod-feat-desc { font-size: 0.845rem; line-height: 1.72; color: var(--muted); font-weight: 300; }
+.prod-stack {
+  margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px solid var(--rule);
+  display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;
+}
+.prod-stack-label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--faint); flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  .prod-grid { grid-template-columns: 1fr; }
+  .prod-feat { border-right: none; border-bottom: 1px solid var(--rule); }
+  .prod-feat:nth-child(3n) { border-right: none; }
+  .prod-feat:nth-child(4),
+  .prod-feat:nth-child(5),
+  .prod-feat:nth-child(6) { border-bottom: 1px solid var(--rule); }
+  .prod-feat:last-child { border-bottom: none; }
+}
+
 /* ── SCROLL REVEAL ── */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -405,6 +458,7 @@ footer {
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#products">Products</a></li>
       <li><a href="#ai">AI Practice</a></li>
       <li><a href="#industries">Industries</a></li>
       <li><a href="#why">Why Us</a></li>
@@ -494,6 +548,69 @@ footer {
           <span class="svc-idx">08</span>
           <span class="svc-name">Retail & Commerce Platforms</span>
           <span class="svc-desc">POS systems, inventory management, loyalty programmes, and omnichannel e-commerce solutions.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="ruled-section stone" id="products">
+  <div class="ruled-inner">
+    <div class="ruled-left">
+      <span class="ruled-label">Products</span>
+      <div class="ruled-rule"></div>
+    </div>
+    <div>
+      <div class="prod-intro reveal">
+        <div class="prod-left">
+          <div style="margin-bottom:1.2rem"><span class="prod-badge">SaaS Platform</span></div>
+          <h2 class="sh">AhamSys LMS</h2>
+          <p class="sh-sub">A white-label, multi-tenant corporate learning management system &mdash; built for enterprises that need to train, assess, and certify their workforce at scale. Each client organisation gets its own isolated environment. Deploy on your cloud or ours.</p>
+        </div>
+        <div class="prod-right" style="transition-delay:.1s">
+          <a href="#contact" class="btn-primary">Request a demo</a>
+          <p class="prod-note">SaaS or self-hosted &middot; Live in production</p>
+        </div>
+      </div>
+
+      <div class="prod-grid reveal" style="transition-delay:.12s">
+        <div class="prod-feat">
+          <div class="prod-feat-name">Multi-Tenant Architecture</div>
+          <div class="prod-feat-desc">Schema-level data isolation in PostgreSQL &mdash; every organisation is provisioned into its own schema automatically. Zero data leakage between tenants, infinite scalability.</div>
+        </div>
+        <div class="prod-feat">
+          <div class="prod-feat-name">Self-Paced &amp; Live Courses</div>
+          <div class="prod-feat-desc">Build structured courses with video, PDF, and article modules &mdash; or deliver live instructor-led sessions integrated directly with Zoom, Google Meet, or Microsoft Teams.</div>
+        </div>
+        <div class="prod-feat">
+          <div class="prod-feat-name">Quizzes &amp; Assessments</div>
+          <div class="prod-feat-desc">In-course assessments with configurable pass scores, automatic grading, and detailed attempt history for every learner. Results tracked per-question.</div>
+        </div>
+        <div class="prod-feat">
+          <div class="prod-feat-name">Automated Certificates</div>
+          <div class="prod-feat-desc">Completion certificates auto-generated from custom-designed HTML templates &mdash; downloadable by learners and auditable by org admins. Fully brandable.</div>
+        </div>
+        <div class="prod-feat">
+          <div class="prod-feat-name">Reports &amp; Analytics</div>
+          <div class="prod-feat-desc">Org-wide completion rates, active learner counts, course assignment tracking, and department-level dashboards for HR and L&amp;D teams.</div>
+        </div>
+        <div class="prod-feat">
+          <div class="prod-feat-name">Role-Based Access</div>
+          <div class="prod-feat-desc">Four distinct roles &mdash; Learner, Instructor, Org Admin, and Platform Admin &mdash; each with scoped permissions, tailored navigation, and their own dashboard.</div>
+        </div>
+      </div>
+
+      <div class="prod-stack reveal" style="transition-delay:.2s">
+        <span class="prod-stack-label">Built on</span>
+        <div class="tech-pills">
+          <span class="tech-pill">.NET 10</span>
+          <span class="tech-pill">Angular 19</span>
+          <span class="tech-pill">PostgreSQL 16</span>
+          <span class="tech-pill">Redis</span>
+          <span class="tech-pill">AWS S3</span>
+          <span class="tech-pill">JWT RS256</span>
+          <span class="tech-pill">Docker</span>
         </div>
       </div>
     </div>
